@@ -1,0 +1,6 @@
+docker pull caddy
+sudo docker image build . -t image1
+sudo docker container run --name container1 -p 8080:80 -d image1
+sudo docker container stop container1
+sudo docker image build . -t image1
+sudo docker container run --name container2 -v $(pwd)/pages:/usr/src/pages -p 8080:80 -d image2
